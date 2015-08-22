@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import sys
+
 # Scrapy settings for slideshare project
 #
 # For simplicity, this file contains only settings considered important or
@@ -14,6 +16,7 @@ BOT_NAME = 'slideshare'
 SPIDER_MODULES = ['slideshare.spiders']
 NEWSPIDER_MODULE = 'slideshare.spiders'
 
+LOG_LEVEL = 'ERROR'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'slideshare (+http://www.yourdomain.com)'
@@ -65,7 +68,14 @@ ITEM_PIPELINES = {
     'slideshare.pipelines.SlidesharePipeline': 1
 }
 
-IMAGES_STORE = "images"
+# get "url" param passed in arguments
+indexUrl = [i for i, word in enumerate(sys.argv) if word.startswith('url=')][0]
+url = sys.argv[indexUrl]
+# get name of the slideshare
+urlSplitted = url.split('/')
+nameOfSlideShare = urlSplitted.pop(len(urlSplitted)-1)
+
+IMAGES_STORE = "images/" + nameOfSlideShare
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
