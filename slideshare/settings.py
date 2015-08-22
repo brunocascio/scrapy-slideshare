@@ -16,7 +16,7 @@ BOT_NAME = 'slideshare'
 SPIDER_MODULES = ['slideshare.spiders']
 NEWSPIDER_MODULE = 'slideshare.spiders'
 
-LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'INFO'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'slideshare (+http://www.yourdomain.com)'
@@ -72,8 +72,7 @@ ITEM_PIPELINES = {
 indexUrl = [i for i, word in enumerate(sys.argv) if word.startswith('url=')][0]
 url = sys.argv[indexUrl]
 # get name of the slideshare
-urlSplitted = url.split('/')
-nameOfSlideShare = urlSplitted.pop(len(urlSplitted)-1)
+nameOfSlideShare = url.split('/')[-1]
 
 IMAGES_STORE = "images/" + nameOfSlideShare
 

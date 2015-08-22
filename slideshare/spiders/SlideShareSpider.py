@@ -10,8 +10,11 @@ class SlideShareSpider(Spider):
 
     def parse(self, response):
         items = []
-        for url in response.css('section img::attr("data-full")'):
+        for slide in response.css('section.slide'):
             item = SlideshareItem()
-            item['image_url'] = url.extract()
+            # get number of slide
+            #item['name'] = slide.css("::attr('data-index')").extract().pop()
+            # get url of full image
+            item['image_url'] = slide.css("img::attr('data-full')").extract().pop()
             items.append(item)
         return items

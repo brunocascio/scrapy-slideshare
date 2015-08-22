@@ -10,3 +10,4 @@ import scrapy
 class SlideshareItem(scrapy.Item):
     # define the fields for your item here like:
     image_url = scrapy.Field()
+    #name = scrapy.Field() # slide number
