@@ -18,4 +18,4 @@ Script for Slideshare scraping, using the python framework [scrapy](http://scrap
 
    `scrapy crawl SlideShareSpider -a url=<URL_OF_SLIDESHARE>`
 
-* The images are downloaded in `images` folder on root directory.
+* The images are downloaded in `images/<nameOfSlideShare>` folder on root directory.
