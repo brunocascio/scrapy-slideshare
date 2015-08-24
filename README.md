@@ -10,7 +10,7 @@ Script for Slideshare scraping, using the python framework [scrapy](http://scrap
 
 * Install dependences:
 
-   `sudo chmod +x install.sh && ./install.sh`
+   `chmod +x install.sh && sudo ./install.sh`
 
     **NOTE**: It works only in Debian like OS. Tested only in **Ubuntu 14.04**. Please consider contribute to this package for others installations. For more info [visit download page](http://scrapy.org/download/).
 
