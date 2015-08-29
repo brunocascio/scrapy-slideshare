@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "Installing deps: "
+printf "Installing deps..."
 
 (
 	apt-get install -y python-dev python-pip \
