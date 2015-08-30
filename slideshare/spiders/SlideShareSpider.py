@@ -3,7 +3,7 @@ from slideshare.items import SlideshareItem
 
 class SlideShareSpider(Spider):
     name = 'SlideShareSpider'
-    allowed_domains = ['es.slideshare.net', 'image.slidesharecdn.com']
+    allowed_domains = ['*.slideshare.net', 'slideshare.net', 'image.slidesharecdn.com']
 
     def __init__(self, url=''):
         self.start_urls = [ "%s" % url ]
